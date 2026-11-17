@@ -29,14 +29,14 @@ export const invitationData = {
   // EVENT & CALENDAR DETAILS
   // ----------------------------------------------------------------------------
   event: {
-    title: "Nikkah ceremony",
+    title: "Hazra & Thameem — Nikkah Ceremony & Wedding Reception",
     startDate: "2026-12-04T17:00:00", // ISO string: 04 Dec 2026, 5:00 PM
     endDate: "2026-12-04T22:30:00",
     timeDisplay: "5 pm",
     venueName: "K hills resort",
-    venueAddress: "Farook",
+    venueAddress: "K hills resort, Farook, Kerala",
     mapEmbedUrl: "https://maps.google.com/maps?q=Klay+Hills+Resorts+%26+Spa,+Farook&t=&z=15&ie=UTF8&iwloc=&output=embed",
-    icsFile: "/wedding.ics",
+    icsFile: "./wedding.ics",
   },
 
   // ----------------------------------------------------------------------------
@@ -275,16 +275,16 @@ export const invitationData = {
   // MEDIA ASSET PATHS
   // ----------------------------------------------------------------------------
   media: {
-    audioTrack: "/media/arabic-wedding-nasheed.mp3",
+    audioTrack: "./media/arabic-wedding-nasheed.mp3",
     audioTitle: "Barakallahu Lakuma - Islamic Wedding Music",
-    introVideo: "/media/film.mp4",
-    posterFirst: "/media/film-first.jpg",
-    posterLast: "/media/film-last.jpg",
-    velvetBg: "/media/velvet-bg.jpg",
-    waxSealImg: "/media/seal-red.png",
-    tablePhoto: "/media/intimate-wedding-in-Kerala-with-cost-and-package.webp",
-    couplePhoto: "/media/couple-bw-red.jpg",
-    petalImg: "/media/petal-red.png",
+    introVideo: "./media/film.mp4",
+    posterFirst: "./media/film-first.jpg",
+    posterLast: "./media/film-last.jpg",
+    velvetBg: "./media/velvet-bg.jpg",
+    waxSealImg: "./media/seal-red.png",
+    tablePhoto: "./media/intimate-wedding-in-Kerala-with-cost-and-package.webp",
+    couplePhoto: "./media/couple-bw-red.jpg",
+    petalImg: "./media/petal-red.png",
   },
 
   // ----------------------------------------------------------------------------

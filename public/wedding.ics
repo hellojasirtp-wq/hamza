@@ -4,22 +4,23 @@ PRODID:-//Hazra & Thameem Wedding//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:hazra-thameem-20261204@invitation
-DTSTAMP:20261113T090000Z
-DTSTART:20261204T170000
-DTEND:20261204T223000
-SUMMARY:Hazra & Thameem Wedding Reception
-LOCATION:Keyath Garden Mariyad, Manjeri, Kerala
-DESCRIPTION:You are cordially invited to celebrate the wedding of Hazra & Thameem on Friday, 4 December 2026 at 5:00 PM at Keyath Garden Mariyad.
+UID:hazra-thameem-wedding-20261204@invitation
+DTSTAMP:20261117T000000Z
+DTSTART:20261204T113000Z
+DTEND:20261204T170000Z
+SUMMARY:Hazra & Thameem — Nikkah Ceremony & Wedding Reception
+LOCATION:K hills resort, Farook, Kerala
+DESCRIPTION:By the grace of Allah and with the blessings of our families, you are cordially invited to celebrate the Nikkah ceremony and wedding reception of Hazra & Thameem on Friday, 4 December 2026 at 5:00 PM at K hills resort, Farook.
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-P1D
 ACTION:DISPLAY
-DESCRIPTION:Tomorrow: Hazra & Thameem Wedding Reception
+DESCRIPTION:Tomorrow: Hazra & Thameem Wedding
 END:VALARM
 BEGIN:VALARM
 TRIGGER:-PT3H
 ACTION:DISPLAY
-DESCRIPTION:In three hours: Hazra & Thameem Wedding Reception
+DESCRIPTION:In 3 hours: Hazra & Thameem Wedding Reception at K hills resort
 END:VALARM
 END:VEVENT
 END:VCALENDAR
