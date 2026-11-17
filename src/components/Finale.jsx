@@ -130,11 +130,11 @@ export default function Finale() {
         </p>
 
         <h2 className="relative mt-2 font-gloock font-normal text-[clamp(52px,15vw,70px)] leading-[0.92] text-ivory z-[2]">
-          {couple.groom}
+          {couple.bride}
           <i className="block font-pinyon not-italic text-[0.5em] leading-[0.8] my-[0.06em] text-rose">
             &amp;
           </i>
-          {couple.bride}
+          {couple.groom}
         </h2>
 
         <p className="relative mt-[18px] text-[14px] tracking-[0.1em] opacity-80 z-[2]">

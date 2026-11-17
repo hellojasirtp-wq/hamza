@@ -7,7 +7,7 @@ import Curtain from './components/Curtain';
 import WaxSeal from './components/WaxSeal';
 import EveningTimeline from './components/EveningTimeline';
 import VenueSpotlight from './components/VenueSpotlight';
-import DressCode from './components/DressCode';
+import Countdown from './components/Countdown';
 import NotesDeck from './components/NotesDeck';
 import RSVPForm from './components/RSVPForm';
 import FAQ from './components/FAQ';
@@ -148,8 +148,8 @@ export default function App() {
         {/* 5. Palazzo Rosso flashlight spotlight & venue details */}
         <VenueSpotlight />
 
-        {/* 6. Shades of red dress code */}
-        <DressCode />
+        {/* 6. Wedding countdown */}
+        <Countdown />
 
         {/* 7. Swipeable notes deck */}
         <NotesDeck />

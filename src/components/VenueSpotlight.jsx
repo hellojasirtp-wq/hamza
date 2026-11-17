@@ -41,9 +41,13 @@ export default function VenueSpotlight() {
   const radius = 14 + scrollProgress * 90;
   const clipPath = `circle(${radius}% at ${spotPos.x}% ${spotPos.y}%)`;
 
-  const mapQuery = encodeURIComponent(event.venueAddress || venue.address);
+  const venueTitle = event.venueName || venue.title;
+  const venueAddress = event.venueAddress || venue.address;
+  const mapQuery = encodeURIComponent(`${venueTitle} ${venueAddress}`.trim());
   const googleDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapQuery}`;
-  const mapEmbedUrl = `https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1s${event.venueCoordinates}!6i14`;
+  const mapEmbedUrl =
+    event.mapEmbedUrl ||
+    `https://maps.google.com/maps?q=${mapQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
   return (
     <section id="venue" className="relative bg-ox text-ivory">
@@ -60,7 +64,7 @@ export default function VenueSpotlight() {
           <div
             ref={photoRef}
             role="img"
-            aria-label={venue.title}
+            aria-label={venueTitle}
             className="absolute inset-0 bg-black bg-cover bg-center brightness-[0.62] [touch-action:pan-y] transition-[clip-path] duration-75"
             style={{
               backgroundImage: `url('${media.tablePhoto}')`,
@@ -83,10 +87,10 @@ export default function VenueSpotlight() {
               {venue.sectionLabel}
             </p>
             <h2 className="m-0 font-gloock font-normal text-[clamp(50px,15vw,68px)] leading-[0.92]">
-              {venue.title}
+              {venueTitle}
             </h2>
             <p className="mt-3 text-[15px] opacity-90">
-              {venue.address}
+              {venueAddress}
             </p>
           </div>
         </div>
@@ -116,7 +120,7 @@ export default function VenueSpotlight() {
         <div className="mt-4 rounded-[22px] overflow-hidden">
           <iframe
             className="block w-full aspect-[4/3] border-0 bg-ink grayscale contrast-125 sepia-[0.6] hue-rotate-[-30deg] saturate-[1.8] brightness-[0.85]"
-            title={`Map: ${venue.title}`}
+            title={`Map: ${venueTitle}`}
             src={mapEmbedUrl}
             referrerPolicy="no-referrer-when-downgrade"
             loading="lazy"

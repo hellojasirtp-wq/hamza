@@ -1,25 +1,25 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Thameem & Hazra Wedding//EN
+PRODID:-//Hazra & Thameem Wedding//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:thameem-hazra-20261204@invitation
+UID:hazra-thameem-20261204@invitation
 DTSTAMP:20261113T090000Z
 DTSTART:20261204T170000
 DTEND:20261204T223000
-SUMMARY:Thameem & Hazra Wedding Reception
+SUMMARY:Hazra & Thameem Wedding Reception
 LOCATION:Keyath Garden Mariyad, Manjeri, Kerala
-DESCRIPTION:You are cordially invited to celebrate the wedding of Thameem & Hazra on Friday, 4 December 2026 at 5:00 PM at Keyath Garden Mariyad.
+DESCRIPTION:You are cordially invited to celebrate the wedding of Hazra & Thameem on Friday, 4 December 2026 at 5:00 PM at Keyath Garden Mariyad.
 BEGIN:VALARM
 TRIGGER:-P1D
 ACTION:DISPLAY
-DESCRIPTION:Tomorrow: Thameem & Hazra Wedding Reception
+DESCRIPTION:Tomorrow: Hazra & Thameem Wedding Reception
 END:VALARM
 BEGIN:VALARM
 TRIGGER:-PT3H
 ACTION:DISPLAY
-DESCRIPTION:In three hours: Thameem & Hazra Wedding Reception
+DESCRIPTION:In three hours: Hazra & Thameem Wedding Reception
 END:VALARM
 END:VEVENT
 END:VCALENDAR

@@ -1,3 +1,4 @@
+
 import React, { forwardRef } from 'react';
 import { invitationData } from '../data/invitationData';
 
@@ -14,27 +15,32 @@ const Hero = forwardRef(
   ) => {
     const { couple, cover, media } = invitationData;
 
-    const taglineText = guestName
+    // Personalized guest greeting
+    const personalizedText = guestName
       ? couple.personalizedTagline(guestName)
-      : couple.tagline;
+      : null;
 
     return (
       <header
         id="top"
         className={`relative h-screen h-[100svh] min-h-[560px] overflow-hidden bg-ox text-ivory ${
           isOpened ? 'is-opened' : ''
-        } ${isPlaying ? 'is-playing' : ''} ${isStill ? 'is-still' : ''}`}
+        } ${isPlaying ? 'is-playing' : ''} ${
+          isStill ? 'is-still' : ''
+        }`}
         style={{ containerType: 'size' }}
       >
         {/* Background container with poster image */}
         <div
           className="absolute inset-0 bg-ox bg-center bg-cover transition-opacity duration-1000"
           style={{
-            backgroundImage: `url('${isStill ? media.posterLast : media.posterFirst}')`,
+            backgroundImage: `url('${
+              isStill ? media.posterLast : media.posterFirst
+            }')`,
           }}
           aria-hidden="true"
         >
-          {/* Subtle darkening vignette overlay once opened */}
+          {/* Darkening vignette overlay */}
           <div
             className={`absolute inset-0 pointer-events-none transition-opacity duration-1000 ${
               isOpened ? 'opacity-100' : 'opacity-0'
@@ -78,33 +84,77 @@ const Hero = forwardRef(
             </p>
           )}
 
-          <div className="absolute left-[10%] right-[10%] top-[43%] text-center">
+          <div className="absolute left-[10%] right-[10%] top-[36%] text-center">
+
+            {/* Bismillah */}
             <p
-              className={`m-0 font-pinyon text-[7cqw] leading-none transition-all duration-[1600ms] ${
-                isOpened ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[2cqw]'
+              className={`m-0 mb-[2.5cqw] text-[6cqw] leading-relaxed transition-all duration-[1600ms] ${
+                isOpened
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-[2cqw]'
               }`}
+              dir="rtl"
+              style={{
+                fontFamily: "'Amiri', serif",
+              }}
             >
-              {taglineText}
+              {couple.bismillah}
             </p>
 
-            <h1
-              className={`mt-[2.6cqw] font-gloock font-normal leading-[0.86] transition-all duration-[1600ms] delay-[350ms] ${
-                isOpened ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[2cqw]'
+            {/* Wedding tagline */}
+            <p
+              className={`m-0 font-pinyon text-[5.5cqw] leading-snug transition-all duration-[1600ms] delay-[200ms] ${
+                isOpened
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-[2cqw]'
               }`}
             >
-              <span className="block text-[10.5cqw] tracking-[-0.02em]">{couple.groom}</span>
+              {couple.tagline}
+            </p>
+
+            {/* Personalized guest greeting */}
+            {personalizedText && (
+              <p
+                className={`mt-[2cqw] font-pinyon text-[5cqw] leading-snug transition-all duration-[1600ms] delay-[300ms] ${
+                  isOpened
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-[2cqw]'
+                }`}
+              >
+                {personalizedText}
+              </p>
+            )}
+
+            {/* Couple names */}
+            <h1
+              className={`mt-[5cqw] font-gloock font-normal leading-[0.86] transition-all duration-[1600ms] delay-[350ms] ${
+                isOpened
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-[2cqw]'
+              }`}
+            >
+              <span className="block text-[10.5cqw] tracking-[-0.02em]">
+                {couple.bride}
+              </span>
+
               <i className="block font-pinyon not-italic text-[7cqw] leading-[0.7] my-[1.4cqw] text-rose">
                 &amp;
               </i>
-              <span className="block text-[10.5cqw] tracking-[-0.02em]">{couple.bride}</span>
+
+              <span className="block text-[10.5cqw] tracking-[-0.02em]">
+                {couple.groom}
+              </span>
             </h1>
 
+            {/* Wedding date */}
             <p
               className={`mt-[4.6cqw] font-familjen text-[3.6cqw] tracking-[0.04em] transition-all duration-[1600ms] delay-[1100ms] ${
-                isOpened ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[2cqw]'
+                isOpened
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-[2cqw]'
               }`}
             >
-              {couple.weddingDateText}
+              {couple.romanNumeralDate}
             </p>
           </div>
         </div>
@@ -118,6 +168,7 @@ const Hero = forwardRef(
         >
           {cover.replyButtonText}
         </a>
+
       </header>
     );
   }
