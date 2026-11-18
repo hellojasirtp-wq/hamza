@@ -96,11 +96,11 @@ export default function WaxSeal() {
             transform: `scale(${buttonScale})`,
           }}
         >
-          <img
-            src={media.waxSealImg}
-            alt="Wax seal"
-            className="block w-full h-full pointer-events-none drop-shadow-[0_12px_20px_rgba(74,10,19,0.3)]"
-          />
+         <img
+  src={media.waxSealImg}
+  alt="Wax seal"
+  className="block w-full h-full pointer-events-none"
+/>
         </button>
 
         <p className="mt-[18px] font-pinyon text-[28px] leading-none text-car transition-all">

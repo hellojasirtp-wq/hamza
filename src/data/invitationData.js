@@ -20,7 +20,7 @@ export const invitationData = {
     personalizedTagline: (guestName) => `Dear ${guestName}, we are getting married`,
     weddingDateText: "Friday, the fourth of December",
     romanNumeralDate: "04 · 12 · 2026",
-    closingSalutation: "With love and prayers,",
+    closingSalutation: "With love,",
     bismillah: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
     dua: "بارك الله لكما وبارك عليكما وجمع بينكما في خير",
   },
@@ -29,14 +29,15 @@ export const invitationData = {
   // EVENT & CALENDAR DETAILS
   // ----------------------------------------------------------------------------
   event: {
-    title: "Hazra & Thameem — Nikkah Ceremony & Wedding Reception",
-    startDate: "2026-12-04T17:00:00", // ISO string: 04 Dec 2026, 5:00 PM
+    title: "Nikkah ceremony",
+    startDate: "2026-12-04T18:00:00+05:30",
+    // ISO string: 04 Dec 2026, 5:00 PM
     endDate: "2026-12-04T22:30:00",
-    timeDisplay: "5 pm",
+    timeDisplay: "6:00 PM",
     venueName: "K hills resort",
-    venueAddress: "K hills resort, Farook, Kerala",
+    venueAddress: "Farook",
     mapEmbedUrl: "https://maps.google.com/maps?q=Klay+Hills+Resorts+%26+Spa,+Farook&t=&z=15&ie=UTF8&iwloc=&output=embed",
-    icsFile: "./wedding.ics",
+    icsFile: "/wedding.ics",
   },
 
   // ----------------------------------------------------------------------------
@@ -69,7 +70,7 @@ export const invitationData = {
     sectionLabel: "Seal the date",
     pressHint: "Press and hold the seal",
     sealedSuccessText: "Sealed with love & prayers",
-    metaText: "5 pm · K hills resort, Farook",
+    metaText: "6 pm · K hills resort, Farook",
     calendarButtonText: "Add to calendar",
     // 9 words revealed progressively as the wax seal is held down:
     wordsLine1: ["Friday"],
@@ -89,7 +90,7 @@ export const invitationData = {
         bg: "bg-wine",
       },
       {
-        time: "5:00 pm",
+        time: "6:00 pm",
         title: "The Reception",
         desc: "Welcoming Hazra & Thameem beneath the chandelier",
         bg: "bg-car",
@@ -135,8 +136,27 @@ export const invitationData = {
   },
 
   // ----------------------------------------------------------------------------
-  // WEDDING COUNTDOWN (uses event.startDate above)
+  // DRESS CODE
   // ----------------------------------------------------------------------------
+  dressCode: {
+    sectionLabel: "Dress code",
+    title: "Festive Elegance\nin shades of red",
+    shades: [
+      { name: "Oxblood", color: "#3a0710", k: 0 },
+      { name: "Garnet", color: "#6e0c1c", k: 1 },
+      { name: "Carmine", color: "#9a1221", k: 2 },
+      { name: "Rose", color: "#c9787a", k: 3 },
+      { name: "Blush", color: "#e9c6bf", k: 4 },
+      { name: "Ivory", color: "#f7ece8", k: 5 },
+    ],
+    looks: {
+      herCaption: "Her · festive evening attire",
+      herImage: "/media/dress-1-red.jpg",
+      himCaption: "Him · dark tailoring or traditional formal",
+      himImage: "/media/dress-2-red.jpg",
+    },
+    adviceNote: "Kindly wear celebratory festive attire. Modest and elegant.",
+  },
 
   // ----------------------------------------------------------------------------
   // GOOD TO KNOW / NOTES DECK
@@ -192,7 +212,7 @@ export const invitationData = {
     ],
     partsLegend: "Which parts will you join?",
     partsOptions: [
-      { val: "Reception", label: "Reception, 5 pm" },
+      { val: "Reception", label: "Reception, 6 pm" },
       { val: "Dinner", label: "Grand Feast" },
       { val: "Celebration", label: "Celebration & blessing" },
     ],
@@ -240,10 +260,9 @@ export const invitationData = {
       later: "We will send you a reminder a week before the wedding.",
     },
     ticketTitle: "Your place at our table",
-    ticketMeta: "Friday, 4 December 2026 · 5 pm\nK hills resort, Farook",
+    ticketMeta: "Friday, 4 December 2026 · 6 pm\nK hills resort, Farook",
     saveTicketButtonText: "Save the ticket to my phone",
     changeReplyButtonText: "Change my reply",
-    googleScriptUrl: "https://script.google.com/macros/s/AKfycbwHaOaMvOoC6t4Eb8bIlNNW9oSB7GQv6VfPGPjp91xcLCiPWS7u851WYbCbwa0A-x6B/exec",
   },
 
   // ----------------------------------------------------------------------------
@@ -254,7 +273,7 @@ export const invitationData = {
     items: [
       {
         q: "What is the wedding date and time?",
-        a: "The celebration takes place on Friday, 4 December 2026 starting at 5:00 PM.",
+        a: "The celebration takes place on Friday, 4 December 2026 starting at 6:00 PM.",
       },
       {
         q: "Where is K hills resort located?",
@@ -275,16 +294,16 @@ export const invitationData = {
   // MEDIA ASSET PATHS
   // ----------------------------------------------------------------------------
   media: {
-    audioTrack: "./media/arabic-wedding-nasheed.mp3",
+    audioTrack: "/media/wedding-song.mp3",
     audioTitle: "Barakallahu Lakuma - Islamic Wedding Music",
-    introVideo: "./media/film.mp4",
-    posterFirst: "./media/film-first.jpg",
-    posterLast: "./media/film-last.jpg",
-    velvetBg: "./media/velvet-bg.jpg",
-    waxSealImg: "./media/seal-red.png",
-    tablePhoto: "./media/intimate-wedding-in-Kerala-with-cost-and-package.webp",
-    couplePhoto: "./media/couple-bw-red.jpg",
-    petalImg: "./media/petal-red.png",
+    introVideo: "/media/film.mp4",
+    posterFirst: "/media/film-first.jpg",
+    posterLast: "/media/film-last.jpg",
+    velvetBg: "/media/velvet-bg.jpg",
+    waxSealImg: "/media/seal-red.png",
+    tablePhoto: "/media/khills-resort.jpeg",
+    couplePhoto: "/media/engagement.jpeg",
+    petalImg: "/media/petal-red.png",
   },
 
   // ----------------------------------------------------------------------------

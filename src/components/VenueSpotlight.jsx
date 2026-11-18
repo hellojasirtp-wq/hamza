@@ -50,7 +50,7 @@ export default function VenueSpotlight() {
     `https://maps.google.com/maps?q=${mapQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
   return (
-    <section id="venue" className="relative bg-ox text-ivory">
+    <section id="venue" className="relative bg-wine text-ivory">
       {/* Interactive Spotlight Sticky Container */}
       <div ref={pinRef} className="relative h-[210vh]">
         <div
@@ -86,7 +86,7 @@ export default function VenueSpotlight() {
             <p className="mb-2 font-pinyon text-[30px] leading-none text-rose opacity-85">
               {venue.sectionLabel}
             </p>
-            <h2 className="m-0 font-gloock font-normal text-[clamp(50px,15vw,68px)] leading-[0.92]">
+            <h2 className="m-0 font-gloock font-normal text-[clamp(40px,12vw,68px)] leading-[0.92]">
               {venueTitle}
             </h2>
             <p className="mt-3 text-[15px] opacity-90">

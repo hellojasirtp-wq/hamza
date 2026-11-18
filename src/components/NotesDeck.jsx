@@ -63,7 +63,7 @@ export default function NotesDeck() {
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerUp}
-          className="relative h-[min(390px,72vw)] min-h-[290px] sm:h-[360px] mt-4 select-none [touch-action:pan-y] cursor-grab active:cursor-grabbing"
+          className="relative h-[330px] mt-4 select-none [touch-action:pan-y] cursor-grab active:cursor-grabbing"
         >
           {cards.map((card, i) => {
             const isTop = i === 0;
@@ -86,17 +86,17 @@ export default function NotesDeck() {
             return (
               <article
                 key={card.id}
-                className={`absolute inset-0 flex flex-col justify-center p-[24px_22px] sm:p-[34px_30px] rounded-[26px] bg-ivory text-ink text-left shadow-[0_30px_40px_-30px_rgba(0,0,0,0.6)] ${transitionClass}`}
+                className={`absolute inset-0 flex flex-col justify-center p-[34px_30px] rounded-[26px] bg-ivory text-ink text-left shadow-[0_30px_40px_-30px_rgba(0,0,0,0.6)] ${transitionClass}`}
                 style={{
                   zIndex: cards.length - i,
                   transform: cardTransform,
                   opacity,
                 }}
               >
-                <p className="m-0 font-gloock text-[32px] sm:text-[40px] leading-none text-car">
+                <p className="m-0 font-gloock text-[40px] leading-none text-car">
                   {card.title}
                 </p>
-                <p className="mt-4 text-[15px] sm:text-[17px] leading-[1.5] text-ink">
+                <p className="mt-4 text-[17px] leading-[1.5] text-ink">
                   {card.text}{' '}
                   {card.phoneNumber && (
                     <a href={card.phoneLink || `tel:${card.phoneNumber}`} className="text-car underline">

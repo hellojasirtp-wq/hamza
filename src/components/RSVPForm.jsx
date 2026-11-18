@@ -72,7 +72,6 @@ export default function RSVPForm({ defaultGuestName = '', onRSVPSubmitted }) {
 
     if (!hasName || !hasCome) return;
 
-    const safePhone = phone.trim();
     const data = {
       name: name.trim(),
       come,
@@ -85,7 +84,7 @@ export default function RSVPForm({ defaultGuestName = '', onRSVPSubmitted }) {
       trip,
       stay,
       song: song.trim(),
-      phone: safePhone.startsWith('+') ? `'${safePhone}` : safePhone,
+      phone: phone.trim(),
       msg: msg.trim(),
       at: new Date().toISOString(),
     };
@@ -93,20 +92,6 @@ export default function RSVPForm({ defaultGuestName = '', onRSVPSubmitted }) {
     try {
       localStorage.setItem('inv-rsvp', JSON.stringify(data));
     } catch (_) {}
-
-    // Automatically send RSVP to Google Sheets if configured
-    if (rsvp.googleScriptUrl) {
-      try {
-        fetch(rsvp.googleScriptUrl, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        }).catch(() => {});
-      } catch (_) {}
-    }
 
     setSavedData(data);
     setIsSent(true);

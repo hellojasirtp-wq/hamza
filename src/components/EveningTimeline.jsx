@@ -1,25 +1,49 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { invitationData } from '../data/invitationData';
+
+const guestNotes = [
+  {
+    number: '01',
+    title: 'Come As You Are',
+    desc: 'Your presence is the greatest gift. We would love to have you with us as our families come together for this special occasion.',
+    bg: 'bg-wine',
+  },
+  {
+    number: '02',
+    title: 'Bring Your Duas',
+    desc: 'Keep us in your prayers as we begin this beautiful new journey together. Your blessings mean the world to us.',
+    bg: 'bg-car',
+  },
+  {
+    number: '03',
+    title: 'Celebrate With Us',
+    desc: 'Come share the happiness, laughter and precious moments. We look forward to celebrating this day with you.',
+    bg: 'bg-ox',
+  },
+];
 
 export default function EveningTimeline() {
   const containerRef = useRef(null);
   const [progress, setProgress] = useState(0);
 
-  const { itinerary } = invitationData;
-  const events = itinerary.events;
-
   useEffect(() => {
     const handleScroll = () => {
       if (!containerRef.current) return;
+
       const rect = containerRef.current.getBoundingClientRect();
       const totalScrollable = rect.height - window.innerHeight;
       const currentScroll = -rect.top;
-      const e = Math.max(0, Math.min(1, currentScroll / Math.max(1, totalScrollable)));
-      setProgress(e);
+
+      const value = Math.max(
+        0,
+        Math.min(1, currentScroll / Math.max(1, totalScrollable))
+      );
+
+      setProgress(value);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll, { passive: true });
+
     handleScroll();
 
     return () => {
@@ -28,8 +52,7 @@ export default function EveningTimeline() {
     };
   }, []);
 
-  const n = events.length;
-  const translateX = -progress * (n - 1) * 100;
+  const translateX = -progress * (guestNotes.length - 1) * 100;
   const barScale = 0.08 + 0.92 * progress;
 
   return (
@@ -37,49 +60,56 @@ export default function EveningTimeline() {
       ref={containerRef}
       id="evening"
       className="relative bg-wine"
-      style={{ height: `${n * 100}vh` }}
+      style={{ height: `${guestNotes.length * 100}vh` }}
     >
       <div className="sticky top-0 h-screen h-[100svh] overflow-hidden">
-        {/* Floating section label */}
+
+        {/* Section heading */}
         <p className="absolute left-[clamp(20px,6vw,30px)] top-[calc(26px+env(safe-area-inset-top))] z-20 font-pinyon text-[30px] leading-none text-rose">
-          {itinerary.sectionLabel}
+          A note to our guests
         </p>
 
-        {/* Horizontal track of scenes */}
+        {/* Horizontal storytelling cards */}
         <div
           className="flex h-full [will-change:transform]"
           style={{
             transform: `translate3d(${translateX}vw, 0, 0)`,
           }}
         >
-          {events.map((item, idx) => (
+          {guestNotes.map((item) => (
             <article
-              key={idx}
-              className={`flex-none w-screen h-full flex flex-col justify-end px-[clamp(20px,6vw,30px)] pb-[22vh] relative overflow-hidden ${item.bg}`}
+              key={item.number}
+              className={`relative flex h-full w-screen flex-none flex-col justify-end overflow-hidden px-[clamp(24px,7vw,40px)] pb-[22vh] ${item.bg}`}
             >
-              <span className="font-pinyon text-[40px] leading-none text-rose">
-                {item.time}
+              {/* Number */}
+              <span className="mb-5 font-pinyon text-5xl leading-none text-rose">
+                {item.number}
               </span>
-              <h3 className="mt-2.5 max-w-full font-gloock font-normal text-[clamp(54px,15.5vw,82px)] leading-[0.9] tracking-[-0.02em] break-words text-ivory">
+
+              {/* Title */}
+              <h3 className="max-w-[90vw] font-gloock text-[clamp(48px,13vw,76px)] font-normal leading-[0.98] tracking-[-0.02em] text-ivory">
                 {item.title}
               </h3>
-              <p className="mt-[18px] max-w-[24ch] text-[17px] opacity-80 text-ivory">
+
+              {/* Message */}
+              <p className="mt-6 max-w-[28ch] font-familjen text-base leading-relaxed text-ivory/85 sm:text-lg">
                 {item.desc}
               </p>
             </article>
           ))}
         </div>
 
-        {/* Progress indicator line */}
+        {/* Scroll progress indicator */}
         <div
-          className="absolute left-[clamp(20px,6vw,30px)] right-[clamp(20px,6vw,30px)] bottom-[calc(30px+env(safe-area-inset-bottom))] h-[2px] bg-[rgba(247,236,232,0.2)]"
+          className="absolute bottom-[calc(30px+env(safe-area-inset-bottom))] left-[clamp(20px,6vw,30px)] right-[clamp(20px,6vw,30px)] h-[2px] bg-[rgba(247,236,232,0.2)]"
           aria-hidden="true"
         >
           <div
-            className="h-full bg-ivory origin-left transition-transform duration-75"
+            className="h-full origin-left bg-ivory transition-transform duration-75"
             style={{ transform: `scaleX(${barScale})` }}
           />
         </div>
+
       </div>
     </section>
   );

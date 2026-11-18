@@ -106,7 +106,7 @@ export default function Finale() {
     <>
       <section
         id="finale"
-        className="relative overflow-hidden pt-[110px] pb-[120px] px-6 text-center bg-car text-ivory"
+        className="relative overflow-hidden pt-[110px] pb-[120px] px-6 text-center bg-ox text-ivory"
       >
         {/* Floating rose petals canvas */}
         <canvas
@@ -142,19 +142,7 @@ export default function Finale() {
         </p>
       </section>
 
-      {/* Footer credits */}
-      <footer className="block py-6 px-6 pb-[calc(100px+env(safe-area-inset-bottom))] text-center text-[12px] opacity-60 bg-ox text-ivory">
-        {footer.madeWithText}{' '}
-        <a
-          href={footer.agencyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-[3px] hover:opacity-100"
-        >
-          {footer.agencyName}
-        </a>
-        {footer.agencyPrompt}
-      </footer>
+   
     </>
   );
 }
