@@ -74,7 +74,7 @@ export const invitationData = {
     calendarButtonText: "Add to calendar",
     // 9 words revealed progressively as the wax seal is held down:
     wordsLine1: ["Friday"],
-    wordsLine2: ["4","-","1","2","-", "2","0","2","6"],
+    wordsLine2: ["4", "-", "1", "2", "-", "2", "0", "2", "6"],
   },
 
   // ----------------------------------------------------------------------------
@@ -132,7 +132,7 @@ export const invitationData = {
     spotlightHint: "Move your finger to light the venue",
     directionsButtonText: "Directions",
     calendarButtonText: "Add to calendar",
-    parkingNote: "Large parking area available. Wheelchair accessible.",
+    parkingNote: "Wheelchair accessible.",
   },
 
   // ----------------------------------------------------------------------------
